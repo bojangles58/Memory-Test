@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8">
+<title>Memory Test</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="css/apps11_sub3.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+<link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
+<script src="https://cdn.jsdelivr.net/npm/easytimer@1.1.1/src/easytimer.min.js"></script>
+
+</head>
+<body>
+
+    <div id="memoryTest" class="overlay">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="closeBtn">&times;</span>
+            <h2 class="Congratulations!" id="memoryTest-label">Congratulations!!</h2>
+        </div>
+        <div class="modal-body">
+            <p id="completion-text">
+          <h4><p>You've matched all cards in: <span id=endTime></span></p></h4>
+          <h4><p>Total number of moves made: <span id=totalMoves></span> Moves</p></h4>
+          <h4><p>Score: <span id=scoreRating></span></p></h4>
+          <h4><p>Fantastic Achievement!!</p></h4>
+          <h4><p>Another Game?</p></h4></p>
+        </div>
+
+        <div class="modal-footer">
+          <div>
+          <button class="restartGame">
+              <b><h4><btn class="playBtn">New Game!</btn></h4></b>
+            </button>
+          </div>
+          
+            <div>
+            <button class="endGame">
+                <b><h4><btn class="cancelBtn">Cancel</btn></h4></b>
+              </button>
+          </div>
+              </div>
+        </div>
+      </div>
+
+    <div class="container">
+          <header>
+              <b><h1>Memory Test Challenge</h1></b>
+          </header>
+
+          <section class="score-panel">
+          	 <ul class="stars">
+          		   <li><i class="fa fa-star"></i></li>
+          		   <li><i class="fa fa-star"></i></li>
+          		   <li><i class="fa fa-star"></i></li>
+          	 </ul>
+
+            <span class="moves">3</span> Move(s) | Time:
+            <span class="timer">00:00:00</span>
+
+            <div>
+              <button class="restart">
+          		        <b><h4><i class="fa fa-repeat">New Deck</i></h4></b>
+              </button>
+            </div>
+          </section>
+
+          <ul class="deck"></ul>
+    </div>
+    <!--<script src="js/jquery-3.3.1.js"></script>-->
+    <script src="js/original_appysub3.js"></script>
