@@ -1,0 +1,276 @@
+html {
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+html,
+body {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 0;
+}
+
+body {
+    background: url(tile_bg.jpg) repeat; /* Background pattern from Google.co.uk/search(tile_bg.jpg)*/
+  }
+.container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+}
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    color: #006400;
+}
+footer{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  color: #006400;
+}
+    /*
+     * Styles for the deck*/
+.deck {
+  width: 90%;
+  max-width: 640px;
+  min-height: 660px;
+  background: linear-gradient(160deg, #1542E7 0%, #1BAC49 100%);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 10px 13px 18px 0 rgba(46, 61, 73, 0.5);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 3em;
+}
+/*
+* Styles for the deck of cards*/
+.deck .card {
+  -webkit-transition: all 2s;
+  transition: all 2s;
+  height: 125px;
+  width: 125px;
+  background:  url(tile_bg.jpg) no-repeat;
+  font-size: 0;
+  color: #ffffff;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.deck .card.open.show {
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    background: #18E8D2;
+    cursor: pointer;
+    font-size: 40px;
+}
+
+.deck .card.match {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    cursor: pointer;
+    background: #5BF30B;
+    font-size: 40px;
+    animation-name: rubberBand;
+    animation-duration: .75s;
+}
+
+.deck .card.open {
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    font-size: 40px;
+    background: #add8e6;
+    cursor: pointer;
+}
+
+.deck .card.unmatched {
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    background: #800000;
+    cursor: pointer;
+    font-size: 40px;
+}
+
+.deck .card.deactivate {
+    pointer-events: none;
+    {opacity: 1}
+
+}
+/*
+* Styles for the Score Panel
+*/
+.score-panel {
+text-align: left;
+width: 80%;
+max-width: 400px;
+margin-bottom: 10px;
+background: linear-gradient(160deg, #1542E7 0%, #1BAC49 100%);
+border: solid darkgreen;
+
+}
+
+.score-panel .stars{
+/*.modal .stars{*/
+margin: 0;
+padding: 0;
+display: inline-block;
+margin: 0 5px 0 0;
+color: #ffd700;
+
+}
+
+.score-panel .stars li{
+/*.modal .stars li{*/
+list-style: none;
+color: #ffd700;
+display: inline-block;
+
+}
+/*icon properties*/
+.fa-music {
+  color: #006400;
+}
+
+.fa-cube {
+  color: #4169e1;
+}
+
+.fa-anchor {
+  color: #999009;
+}
+
+.fa-legal {
+  color: #232b2b;
+}
+
+.fa-smile-o {
+  color: #FF8C00;
+}
+
+.fa-flag {
+  color:  #FFF;
+}
+
+.fa-paper-plane-o {
+  color: #4b0082;
+}
+
+.fa-thumbs-up {
+  color: #A9A9A9;
+}
+
+.score-panel .restart {
+float: right;
+cursor: pointer;
+font-size: 15px;
+background: #5BF30B;
+border: solid red;
+}
+
+#timer {
+  color: #191970;
+  display: inline-block;
+}
+
+/* The Modal (background) */
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.overlay {
+  display: none;
+  width: 100%;
+  height: 100%;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+  background: url(tile_bg.jpg) repeat;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+	transition: opacity 500ms;
+	opacity: 0.8;
+  z-index: 1;
+  overflow: auto
+}
+
+.overlay:target {
+  display: none;
+	opacity: 1;
+}
+/* Text Box*/
+.modal-content{
+  background-color: #7cfc00;
+  margin: 15% auto; /* height from top of the page */
+  width: 60%;
+  height: 40%;
+  box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2),0 7px 20px 0 rgba(0,0,0.17);
+  animation-name: memory;
+  animation-duration: 1.5s;
+}
+
+.modal-header h2, .modal-footer h4{
+  margin: 0;
+}
+
+.modal-header{
+  background: linear-gradient(160deg, #1542E7 0%, #1BAC49 100%);
+  padding: 15px;
+  color: blue;
+  align-items: center;
+
+}
+.modal-footer{
+  background: linear-gradient(160deg, #1542E7 0%, #1BAC49 100%);
+  padding: 20px;
+  color: blue;
+  text-align: center;
+}
+/* 'X' button*/
+.modal-close{
+  padding: 10px;
+  color: blue;
+  text-align: center;
+  font-weight: bold;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.modal-body,
+.completionText {
+  padding: 10px 20px;
+  font-size: 1em;
+  margin: 0;
+  color: blue;
+
+}
+/* Here I would have liked star rating colours to have changed accordingly.*/
+#scoreRating li { /* # = ID*/
+  display: inline-block;
+  color: #ffd700; /*gold = 3 stars*/
+}
+.fa-star li{
+  color: #c9c0bb; /*silvwe = 2 stars*/
+}
+.fa-star li{
+  color: #cd7f32; /*bronze = 1 star*/
+}
+
+.closeBtn{
+  color: #ccc;
+  float: right;
+  font-size: 30px;
+}
